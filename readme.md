@@ -1,4 +1,4 @@
-## 精简版angular的实现
+## mini版angular的实现
 
 ### 学习目标
 * 深入掌握 angular 1.x
