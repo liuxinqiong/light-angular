@@ -172,8 +172,8 @@ var DOMCompiler = {
 		var scopeCreated;
 		dirs.forEach(function (d) {
 			dir = Provider.get(d.name + Provider.DIRECTIVES_SUFFIX);
-			//dir.scope代表当前 directive是否需要生成新的scope
-			//这边的情况是只要有一个指令需要单独的scope，其他的directive也会变成具有新的scope对象，这边是不是不太好
+			// dir.scope代表当前 directive是否需要生成新的scope
+			// 这边的情况是只要有一个指令需要单独的scope，其他的directive也会变成具有新的scope对象，这边是不是不太好
 			if (dir.scope && !scopeCreated) {
 				scope = scope.$new();
 				scopeCreated = true;
@@ -229,7 +229,7 @@ Provider.directive('ngl-model', function () {
 
 Provider.directive('ngl-controller', function () {
 	return {
-		scope: true,//每个controller生成一个新的scope对象
+		scope: true,// 每个controller生成一个新的scope对象
 		link: function (el, scope, exp) {
 			var ctrl = Provider.get(exp + Provider.CONTROLLERS_SUFFIX);
 			Provider.invoke(ctrl, { $scope: scope });
